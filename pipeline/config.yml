@@ -1,0 +1,21 @@
+SchemaVersion: "1.0"
+SageMaker:
+  PythonSDK:
+    Modules:
+      RemoteFunction:
+        Dependencies: "pipeline/requirements.txt"
+        # ImageUri: "xxxxxxxxxxxx.dkr.ecr.region.amazonaws.com/private-repo:version"
+        InstanceType: "ml.m4.xlarge" # minimum machine type for Training Job
+        IncludeLocalWorkDir: true # import code from other modules
+        CustomFileFilter:
+          IgnoreNamePatterns:
+            - "*.ipynb" # all notebook files
+  # secure Training Job
+  TrainingJob:
+    EnableNetworkIsolation: true
+    VpcConfig:
+      SecurityGroupIds:
+        - "sg-0"
+      Subnets:
+        - "subnet-0"
+        - "subnet-1"
