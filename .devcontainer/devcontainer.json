@@ -1,0 +1,27 @@
+{
+  "name": "Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  // https://containers.dev/features
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "installTools": false,
+      "version": "3.10.16"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "24.0.9-debian12u1"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "2.15.30"
+    }
+  },
+  "postStartCommand": "sh .devcontainer/post-start.sh",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    }
+  }
+}
