@@ -6,6 +6,9 @@
   },
   // https://containers.dev/features
   "features": {
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.23.3"
+    },
     "ghcr.io/devcontainers/features/python:1": {
       "installTools": false,
       "version": "3.10.16"
