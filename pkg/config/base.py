@@ -1,0 +1,36 @@
+from __future__ import annotations
+
+import base64
+
+import yaml
+from pydantic import BaseModel, ConfigDict, ValidationError
+from pydantic.alias_generators import to_camel
+from typing_extensions import Self
+
+from pkg.log import get_logger
+
+logger = get_logger(__name__)
+
+
+class BaseConfig(BaseModel):
+    model_config = ConfigDict(
+        alias_generator=to_camel,
+        populate_by_name=True,
+    )
+
+    region_name: str
+    time_zone: str
+
+    mlflow_tracking_server_arn: str
+
+    @classmethod
+    def load_config(cls, config_base64: str) -> Self:
+        config_yaml = base64.b64decode(config_base64).decode("utf-8")
+        config_dict = yaml.safe_load(config_yaml)
+        try:
+            config = cls.model_validate(config_dict)
+        except ValidationError:
+            logger.exception("Configuration validation error")
+            raise
+
+        return config

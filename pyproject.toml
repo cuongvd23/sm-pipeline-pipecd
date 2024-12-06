@@ -11,11 +11,93 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.10"
 poetry = "1.8.3"
+colorlog = "^6.9.0"
+sagemaker = "^2.237.0"
+pyyaml = "^6.0.2"
+typer = "^0.15.1"
 
-[tool.poetry.group.typing.dependencies]
+[tool.poetry.group.dev.dependencies]
 mypy = "^1.13.0"
-types-requests = "^2.32.0"
+# types
+boto3-stubs = "^1.35.0"
+types-pyyaml = "^6.0.12.20240917"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+extend-exclude = ["*.ipynb"]
+line-length = 90
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "ICN", # flake8-import-conventions
+  "Q",   # flake8-quotes
+  "SIM", # flake8-simplify
+  "TID", # flake8-tidy-imports
+  "YTT", # flake8-2020
+  "G",   # flake8-logging-format
+  "UP",  # pyupgrade
+]
+ignore = [
+  "E501", # line too long
+  "B008", # do not perform function calls in argument defaults
+  "C901", # too complex
+  "G004", # Logging statement uses f-string
+]
+extend-select = [
+  "RUF200", # failed to parse pyproject.toml
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-line-length = 60
+docstring-code-format = true
+
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = []
+no_implicit_optional = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_unreachable = true
+explicit_package_bases = true
+disallow_untyped_defs = true
+follow_imports = "normal"
+
+[[tool.mypy.overrides]]
+module = ["sagemaker.*"]
+ignore_missing_imports = true
+ignore_errors = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true

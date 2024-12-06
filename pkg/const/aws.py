@@ -1,0 +1,2 @@
+SAGEMAKER_SERVICE_NAME = "sagemaker"
+SAGEMAKER_RUNTIME_SERVICE_NAME = "sagemaker-runtime"

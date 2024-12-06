@@ -1,0 +1,14 @@
+from sagemaker.workflow.function_step import step
+
+from pkg.log import get_logger
+
+logger = get_logger(__name__)
+
+
+@step(display_name="model_evaluate")
+def model_evaluate() -> None:
+    logger.info("Start model evaluating...")
+
+    # TODO: implement me
+
+    logger.info("Job done successfully!")
