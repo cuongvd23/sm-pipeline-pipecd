@@ -15,8 +15,9 @@ colorlog = "^6.9.0"
 sagemaker = "^2.237.0"
 pyyaml = "^6.0.2"
 typer = "^0.15.1"
+python-dotenv = "^1.0.1"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.group.typing.dependencies]
 mypy = "^1.13.0"
 # types
 boto3-stubs = "^1.35.0"

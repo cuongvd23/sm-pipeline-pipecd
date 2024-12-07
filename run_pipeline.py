@@ -1,7 +1,9 @@
 import json
 import sys
+from typing import Annotated
 
 import typer
+from dotenv import load_dotenv
 from sagemaker.local.entities import _LocalPipelineExecution
 
 from pipeline.dag import get_pipeline
@@ -10,8 +12,14 @@ from pkg.log import get_logger
 
 logger = get_logger(__name__)
 
+load_dotenv()
 
-def main(config_data: str) -> None:
+
+def main(
+    config_data: Annotated[
+        str, typer.Option("--config-data", help="Base64 encoded of configuration data.")
+    ],
+) -> None:
     try:
         pipeline_config = PipelineConfig.load_config(config_data)
         pipeline = get_pipeline(pipeline_config)
@@ -21,7 +29,9 @@ def main(config_data: str) -> None:
             extra={"pipeline-definition": parsed_definition},
         )
 
-        upsert_response = pipeline.upsert(role_arn=pipeline_config.role_arn)
+        role_arn = pipeline_config.role_arn
+
+        upsert_response = pipeline.upsert(role_arn=role_arn)
         logger.info(
             "created/updated sagemaker pipeline: response received",
             extra={"response": upsert_response},
