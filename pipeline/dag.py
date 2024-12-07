@@ -1,7 +1,7 @@
+from sagemaker import Session
 from sagemaker.config import load_sagemaker_config
-from sagemaker.session import Session
+from sagemaker.workflow.function_step import get_step
 from sagemaker.workflow.pipeline import Pipeline
-from sagemaker.workflow.step_outputs import get_step
 
 from pipeline.steps import (
     data_preprocess,
@@ -26,7 +26,7 @@ def get_pipeline(config: PipelineConfig) -> Pipeline:
 
     _data_preprocess = data_preprocess()  # pyright: ignore[reportCallIssue]
     _data_validate = data_validate()  # pyright: ignore[reportCallIssue]
-    _model_train = model_train(config)  # pyright: ignore[reportCallIssue]
+    _model_train = model_train()  # pyright: ignore[reportCallIssue]
     _model_tune = model_tune()  # pyright: ignore[reportCallIssue]
     _model_evaluate = model_evaluate()  # pyright: ignore[reportCallIssue]
 
