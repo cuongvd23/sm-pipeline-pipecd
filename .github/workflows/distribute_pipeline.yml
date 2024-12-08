@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    outputs:
+      version: ${{ steps.meta.outputs.version }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -51,8 +53,21 @@ jobs:
   trigger-deploy:
     runs-on: ubuntu-latest
     needs: [container-images]
-    environment:
-      name: approval # TODO: manual approval to trigger these steps
+    outputs:
+        CONTINUE_JOBS: ${{ steps.trigger-deploy.outputs.CONTINUE_JOBS }}
+    steps:
+      - name: trigger-deploy
+        id: trigger-deploy
+        uses: benhamiltonpro/manual-trigger@v1
+        with:
+          RUN_NAME: "send-deploy-event"
+
+  send-deploy-event:
+    runs-on: ubuntu-latest
+    needs: [container-images, trigger-deploy]
+    if: ${{ needs.trigger-deploy.outputs.CONTINUE_JOBS == 'true' }}
+    env:
+      version: ${{ needs.container-images.outputs.version }}
     steps:
       - uses: pipe-cd/actions-event-register@v1
         with:
@@ -60,5 +75,5 @@ jobs:
           api-key: ${{ secrets.PIPECD_API_KEY }}
           event-name: sm-pipeline-pipecd-image-update
           labels: app=sm-pipeline-pipecd
-          data: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}
+          data: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.version }}
           pipectl-version: v0.50.0
