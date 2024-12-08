@@ -58,7 +58,7 @@ jobs:
         with:
           api-address: ${{ secrets.PIPECD_API_ADDRESS }}
           api-key: ${{ secrets.PIPECD_API_KEY }}
-          event-name: sagemaker-pipeline-image-update
-          labels: app=sagemaker-pipeline
+          event-name: sm-pipeline-pipecd-image-update
+          labels: app=sm-pipeline-pipecd
           data: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}
           pipectl-version: v0.50.0
