@@ -1,0 +1,26 @@
+family: sm-pipeline-pipecd
+networkMode: awsvpc
+taskRoleArn: "arn:aws:iam::111111111111:role/sagemaker-pipeline"
+executionRoleArn: "arn:aws:iam::111111111111:role/ecs-task-execution"
+cpu: 256
+memory: 512
+compatibilities:
+  - FARGATE
+requiresCompatibilities:
+  - FARGATE
+containerDefinitions:
+  - name: sm-pipeline-pipecd
+    image: cuongvd23/sm-pipeline-pipecd:v0.0.1
+    essential: true
+    entryPoint:
+      - /venv/bin/python3
+      - run_pipeline.py
+    command:
+      - --config-data
+      - "{{ .attachment.config | b64enc }}"
+    logConfiguration:
+      logDriver: awslogs
+      options:
+        awslogs-stream-prefix: container
+        awslogs-region: region 
+        awslogs-group: /aws/sagemaker/pipeline

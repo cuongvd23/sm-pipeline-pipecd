@@ -1,0 +1,36 @@
+apiVersion: pipecd.dev/v1beta1
+kind: ECSApp
+spec:
+  name: sm-pipeline-pipecd
+  labels:
+    layer: sm-pipeline-pipecd
+  input:
+    taskDefinitionFile: taskdef.yaml
+    clusterArn: "arn:aws:ecs:region:111111111111:cluster/ecs-cluster"
+    awsvpcConfiguration:
+      assignPublicIp: DISABLED
+      securityGroups:
+        - sg-0
+      subnets:
+        - subnet-0
+        - subnet-1
+  attachment:
+    sources:
+      config: pipeline-config.yaml
+    targets:
+      - taskdef.yaml
+  description: |
+    The AWS Sagemaker Pipeline CD with PipeCD
+
+  eventWatcher:
+    - matcher:
+        name: sm-pipeline-pipecd-image-update
+        labels:
+          app: sm-pipeline-pipecd
+      handler:
+        type: GIT_UPDATE
+        config:
+          commitMessage: "Upgrade sm-pipeline-pipecd image to the latest version"
+          replacements:
+            - file: taskdef.yaml
+              yamlField: $.containerDefinitions[0].image
