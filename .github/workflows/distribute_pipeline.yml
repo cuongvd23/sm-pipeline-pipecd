@@ -49,6 +49,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           file: pipeline/Dockerfile
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
   trigger-deploy:
     runs-on: ubuntu-latest
