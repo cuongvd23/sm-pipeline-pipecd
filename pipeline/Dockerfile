@@ -1,4 +1,4 @@
-FROM python:3.10.16-slim AS build
+FROM python:3.10.16 AS build
 RUN python -m venv /venv && \
   /venv/bin/pip install --upgrade pip
 
@@ -14,7 +14,7 @@ COPY pyproject.toml /pyproject.toml
 
 RUN . /venv/bin/activate && poetry install --only main --sync
 
-FROM python:3.10.16-alpine
+FROM python:3.10.16-slim
 
 COPY --from=build-venv /venv /venv
 COPY . /app
