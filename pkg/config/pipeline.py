@@ -8,7 +8,7 @@ class PipelineConfig(BaseConfig):
     role_arn: str
     s3_prefix: str
     s3_bucket: str
-    s3_endpoint_url: str | None
+    s3_endpoint_url: str | None = None
 
     mlflow_experiment_name: str
 
