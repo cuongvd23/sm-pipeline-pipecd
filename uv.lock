@@ -968,7 +968,7 @@ wheels = [
 
 [[package]]
 name = "sagemaker"
-version = "2.237.0"
+version = "2.237.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -997,9 +997,9 @@ dependencies = [
     { name = "urllib3" },
     { name = "uvicorn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f1/df/fa84642d89d4ba961d104f511dd2cee7a499dee6a72fe976828c849917f9/sagemaker-2.237.0.tar.gz", hash = "sha256:5b37f649c873c9d1b8f7c1b8934a5d4b99d63c4bad04b8187cdeff5d6e520a48", size = 1182000, upload-time = "2024-12-05T03:00:43.158Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d1/2d/4e9f85143e0c89f78a1bf62a0d25826fdfe86906a897349e449768560351/sagemaker-2.237.3.tar.gz", hash = "sha256:3193e4fe89087959aca9b037a3659dce437a5f27f3bf750faba20b21f05e6e66", size = 1181645, upload-time = "2025-01-09T21:56:13.264Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/10/4261bfbfac5f4834a17456b4c6e8524e5205c8958f274081e14371ce7043/sagemaker-2.237.0-py3-none-any.whl", hash = "sha256:855da7a1a08ccf5ee4cf236813f1284846c6e6fab0e8178c3331e6050142ff77", size = 1627862, upload-time = "2024-12-05T03:00:39.997Z" },
+    { url = "https://files.pythonhosted.org/packages/60/c4/105108c547e89660e46adc98db2dc94e1cbd45f389fa93b84cf869913f7d/sagemaker-2.237.3-py3-none-any.whl", hash = "sha256:1590b6ed76b31085d7ff678bbbfca1f8790f70af04975fb547120c8c510e17a2", size = 1627726, upload-time = "2025-01-09T21:56:09.438Z" },
 ]
 
 [[package]]
@@ -1074,7 +1074,7 @@ requires-dist = [
     { name = "mypy", marker = "extra == 'typing'", specifier = "==1.13.0" },
     { name = "python-dotenv", specifier = "==1.0.1" },
     { name = "pyyaml", specifier = "==6.0.2" },
-    { name = "sagemaker", specifier = "==2.237.0" },
+    { name = "sagemaker", specifier = "==2.237.3" },
     { name = "typer", specifier = "==0.15.1" },
     { name = "types-pyyaml", marker = "extra == 'typing'", specifier = "==6.0.12.20240917" },
 ]
