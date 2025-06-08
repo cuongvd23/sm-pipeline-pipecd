@@ -1,31 +1,26 @@
-[tool.poetry]
-name = "sagemaker-pipeline"
-version = "0.1.0"
-description = "The AWS Sagemaker Pipeline."
-authors = ["cuongvd23 <johnvu23.vn@gmail.com>"]
-repository = "https://github.com/cuongvd23/sagemaker-pipeline"
+[project]
+name = "sm-pipeline-pipecd"
+version = "0.2.0"
+description = "Add your description here"
+authors = [{ name = "cuongvd23", email = "johnvu23.vn@gmail.com" }]
+urls = { repository = "https://github.com/cuongvd23/sagemaker-pipeline" }
 keywords = ["aws", "sagemaker", "pipeline", "mlops", "pipecd", "cicd"]
 readme = "README.md"
-package-mode = false
+requires-python = ">=3.10"
+dependencies = [
+  "colorlog == 6.9.0",
+  "python-dotenv == 1.0.1",
+  "pyyaml == 6.0.2",
+  "sagemaker == 2.237.0",
+  "typer == 0.15.1",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-poetry = "1.8.3"
-colorlog = "^6.9.0"
-sagemaker = "^2.237.0"
-pyyaml = "^6.0.2"
-typer = "^0.15.1"
-python-dotenv = "^1.0.1"
-
-[tool.poetry.group.typing.dependencies]
-mypy = "^1.13.0"
-# types
-boto3-stubs = "^1.35.0"
-types-pyyaml = "^6.0.12.20240917"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[project.optional-dependencies]
+typing = [
+  "mypy == 1.13.0",
+  "boto3-stubs == 1.35.76",
+  "types-pyyaml == 6.0.12.20240917",
+]
 
 [tool.ruff]
 extend-exclude = ["*.ipynb"]
