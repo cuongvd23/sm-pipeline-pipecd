@@ -1,0 +1,9 @@
+version: 2
+
+updates:
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "cron"
+      cronjob: "0 9 * * *"
+      timezone: Asia/Tokyo
