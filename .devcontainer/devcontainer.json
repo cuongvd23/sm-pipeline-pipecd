@@ -11,7 +11,7 @@
     },
     "ghcr.io/devcontainers/features/python:1": {
       "installTools": false,
-      "version": "3.10.16"
+      "version": "3.13"
     },
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
