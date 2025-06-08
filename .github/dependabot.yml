@@ -2,7 +2,6 @@ version: 2
 
 updates:
   - package-ecosystem: "uv"
-    insecure-external-code-execution: allow
     directory: "/"
     schedule:
       interval: "cron"
