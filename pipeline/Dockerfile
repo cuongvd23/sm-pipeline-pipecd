@@ -1,23 +1,27 @@
-FROM python:3.10.16 AS build
-RUN python -m venv /venv && \
-  /venv/bin/pip install --upgrade pip
+# Install uv
+FROM python:3.13 AS builder
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-FROM build AS build-venv
+# Change the working directory to the `app` directory
+WORKDIR /app
 
-ENV PATH="/venv/bin:$PATH"
+# Install dependencies
+RUN --mount=type=cache,target=/root/.cache/uv \
+  --mount=type=bind,source=uv.lock,target=uv.lock \
+  --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+  uv sync --locked --no-install-project --no-editable
 
-ARG POETRY_VERSION="1.8.3"
-RUN pip install --disable-pip-version-check poetry==${POETRY_VERSION}
-
-COPY poetry.lock /poetry.lock
-COPY pyproject.toml /pyproject.toml
-
-RUN . /venv/bin/activate && poetry install --only main --sync
-
-FROM python:3.10.16-slim
-
-COPY --from=build-venv /venv /venv
+# Copy the project into the intermediate image
 COPY . /app
 
-WORKDIR /app
-CMD ["/venv/bin/python3", "run_pipeline.py"]
+# Sync the project
+RUN --mount=type=cache,target=/root/.cache/uv \
+  uv sync --locked --no-editable
+
+FROM python:3.13-slim
+
+# Copy the environment, but not the source code
+COPY --from=builder --chown=app:app /app/.venv /app/.venv
+
+# Run the application
+CMD ["/app/.venv/bin/python3", "run_pipeline.py"]
