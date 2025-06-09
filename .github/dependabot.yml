@@ -7,3 +7,7 @@ updates:
       interval: "cron"
       cronjob: "0 9 * * *"
       timezone: Asia/Tokyo
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
