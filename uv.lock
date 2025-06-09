@@ -808,8 +808,8 @@ dependencies = [
     { name = "typer" },
 ]
 
-[package.dev-dependencies]
-dev = [
+[package.optional-dependencies]
+typing = [
     { name = "boto3-stubs" },
     { name = "mypy" },
     { name = "types-pyyaml" },
@@ -817,19 +817,16 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "boto3-stubs", marker = "extra == 'typing'", specifier = "==1.35.76" },
     { name = "colorlog", specifier = "==6.9.0" },
+    { name = "mypy", marker = "extra == 'typing'", specifier = "==1.13.0" },
     { name = "python-dotenv", specifier = "==1.1.0" },
     { name = "pyyaml", specifier = "==6.0.2" },
     { name = "sagemaker", specifier = "==2.246.0" },
     { name = "typer", specifier = "==0.16.0" },
+    { name = "types-pyyaml", marker = "extra == 'typing'", specifier = "==6.0.12.20240917" },
 ]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "boto3-stubs", specifier = "==1.35.76" },
-    { name = "mypy", specifier = "==1.13.0" },
-    { name = "types-pyyaml", specifier = "==6.0.12.20240917" },
-]
+provides-extras = ["typing"]
 
 [[package]]
 name = "smdebug-rulesconfig"

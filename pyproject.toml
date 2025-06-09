@@ -15,8 +15,12 @@ dependencies = [
   "typer==0.16.0",
 ]
 
-[dependency-groups]
-dev = ["mypy==1.13.0", "boto3-stubs==1.35.76", "types-pyyaml==6.0.12.20240917"]
+[project.optional-dependencies]
+typing = [
+  "mypy==1.13.0", 
+  "boto3-stubs==1.35.76",
+  "types-pyyaml==6.0.12.20240917",
+]
 
 [tool.uv]
 package = false
