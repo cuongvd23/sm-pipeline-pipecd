@@ -9,10 +9,10 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
   "colorlog==6.9.0",
-  "python-dotenv==1.0.1",
+  "python-dotenv==1.1.0",
   "pyyaml==6.0.2",
   "sagemaker==2.246.0",
-  "typer==0.15.1",
+  "typer==0.16.0",
 ]
 
 [dependency-groups]
