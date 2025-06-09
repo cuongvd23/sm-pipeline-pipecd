@@ -809,7 +809,7 @@ dependencies = [
 ]
 
 [package.dev-dependencies]
-typing = [
+dev = [
     { name = "boto3-stubs" },
     { name = "mypy" },
     { name = "types-pyyaml" },
@@ -825,7 +825,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-typing = [
+dev = [
     { name = "boto3-stubs", specifier = "==1.35.76" },
     { name = "mypy", specifier = "==1.13.0" },
     { name = "types-pyyaml", specifier = "==6.0.12.20240917" },
