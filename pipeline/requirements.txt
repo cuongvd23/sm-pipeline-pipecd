@@ -1,1 +1,1 @@
-sagemaker==2.246.0
+sagemaker==2.247.0
