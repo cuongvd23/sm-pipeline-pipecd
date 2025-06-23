@@ -203,3 +203,5 @@ web/dist
 
 # ENV
 .env
+
+.opencode/
