@@ -17,13 +17,17 @@ dependencies = [
 
 [project.optional-dependencies]
 typing = [
-  "mypy==1.16.1", 
+  "mypy==1.16.1",
   "boto3-stubs==1.38.43",
   "types-pyyaml==6.0.12.20250516",
 ]
 
 [tool.uv]
 package = false
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.ruff]
 extend-exclude = ["*.ipynb"]
