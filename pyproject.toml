@@ -18,12 +18,14 @@ dependencies = [
 
 [project.optional-dependencies]
 typing = [
-  "mypy==1.16.1",
+  # "mypy==1.16.1",
   "boto3-stubs==1.39.3",
   "types-pyyaml==6.0.12.20250516",
 ]
+lint = ["mypy==1.16.1", "ruff==0.12.2", "sqlfluff==3.4.1"]
 
-llmexecutor = ["openai==1.93.0"]
+
+llmexecutor = ["openai==1.93.0", "psycopg[binary, pool]==3.2.9"]
 
 [tool.uv]
 package = false
