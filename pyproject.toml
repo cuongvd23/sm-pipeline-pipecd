@@ -23,7 +23,7 @@ typing = [
   "types-pyyaml==6.0.12.20250516",
 ]
 
-llmexecutor = ["openai==1.93.0"]
+llmexecutor = ["openai==1.93.1"]
 
 [tool.uv]
 package = false
