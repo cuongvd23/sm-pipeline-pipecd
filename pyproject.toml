@@ -6,7 +6,7 @@ authors = [{ name = "cuongvd23", email = "johnvu23.vn@gmail.com" }]
 urls = { repository = "https://github.com/cuongvd23/sagemaker-pipeline" }
 keywords = ["aws", "sagemaker", "pipeline", "mlops", "pipecd", "cicd"]
 readme = "README.md"
-requires-python = "==3.11.2"
+requires-python = ">=3.11,<3.12"
 dependencies = [
   "uv==0.7.20",
   "colorlog==6.9.0",
