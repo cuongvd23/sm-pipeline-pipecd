@@ -2,7 +2,9 @@ version: 2
 
 updates:
   - package-ecosystem: "uv"
-    directory: "/"
+    directories: 
+    - "/"
+    - "/nest"
     schedule:
       interval: "cron"
       cronjob: "0 9 * * *"
