@@ -9,6 +9,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
   "uv==0.8.4",
+  "boto3==1.39.17",
   "colorlog==6.9.0",
   "python-dotenv==1.1.1",
   "pyyaml==6.0.2",
@@ -80,10 +81,11 @@ docstring-code-format = true
 
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.13"
 strict = true
 plugins = ["pydantic.mypy"]
 exclude = []
+implicit_reexport = true
 no_implicit_optional = true
 check_untyped_defs = true
 warn_return_any = true
