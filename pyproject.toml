@@ -35,7 +35,7 @@ build-backend = "hatchling.build"
 extend-exclude = ["*.ipynb"]
 line-length = 90
 indent-width = 4
-target-version = "py310"
+target-version = "py313"
 
 [tool.ruff.lint]
 select = [
@@ -96,6 +96,12 @@ warn_unreachable = true
 explicit_package_bases = true
 disallow_untyped_defs = true
 follow_imports = "normal"
+
+[[tool.mypy.overrides]]
+module = [
+  "pipeline.*", # ignore mypy on sagemaker
+]
+ignore_errors = true
 
 [[tool.mypy.overrides]]
 module = ["sagemaker.*"]
