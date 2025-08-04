@@ -50,6 +50,7 @@ dependencies = [
     { name = "jmespath" },
     { name = "s3transfer" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/70/15/8c2f455fccd6253ae2a95d7d872fcce27adab8c719218027b7c31a48542b/boto3-1.39.17.tar.gz", hash = "sha256:a6904a40b1c61f6a1766574b3155ec75a6020399fb570be2b51bf93a2c0a2b3d", size = 111831, upload-time = "2025-07-30T19:27:05.162Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f0/45/8321081d478881779551692a185bbe19574a2ac87294f5096c549837292c/boto3-1.39.17-py3-none-any.whl", hash = "sha256:6af9f7d6db7b5e72d6869ae22ebad1b0c6602591af2ef5d914b331a055953df5", size = 139901, upload-time = "2025-07-30T19:27:04.001Z" },
 ]
@@ -845,7 +846,7 @@ dependencies = [
     { name = "uv" },
 ]
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 typing = [
     { name = "boto3-stubs" },
     { name = "mypy" },
@@ -855,17 +856,20 @@ typing = [
 [package.metadata]
 requires-dist = [
     { name = "boto3", specifier = "==1.39.17" },
-    { name = "boto3-stubs", marker = "extra == 'typing'", specifier = "==1.39.17" },
     { name = "colorlog", specifier = "==6.9.0" },
-    { name = "mypy", marker = "extra == 'typing'", specifier = "==1.17.0" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "pyyaml", specifier = "==6.0.2" },
     { name = "sagemaker", specifier = "==2.249.0" },
     { name = "typer", specifier = "==0.16.0" },
-    { name = "types-pyyaml", marker = "extra == 'typing'", specifier = "==6.0.12.20250516" },
     { name = "uv", specifier = "==0.8.4" },
 ]
-provides-extras = ["typing"]
+
+[package.metadata.requires-dev]
+typing = [
+    { name = "boto3-stubs", specifier = "==1.39.17" },
+    { name = "mypy", specifier = "==1.17.0" },
+    { name = "types-pyyaml", specifier = "==6.0.12.20250516" },
+]
 
 [[package]]
 name = "smdebug-rulesconfig"
