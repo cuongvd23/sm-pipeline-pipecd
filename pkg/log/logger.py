@@ -21,5 +21,8 @@ def get_logger(name: str) -> logging.Logger:
     handler = logging.StreamHandler()
     handler.setFormatter(formatter)
     _logger = logging.getLogger(name)
+    if _logger.hasHandlers():
+        _logger.handlers.clear()
     _logger.addHandler(handler)
+    _logger.propagate = False
     return _logger
