@@ -4,6 +4,7 @@
 services:
   minio:
     image: docker.io/bitnami/minio:2025
+    container_name: minio
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -13,8 +14,30 @@ services:
       - MINIO_ROOT_USER=${AWS_ACCESS_KEY_ID}
       - MINIO_ROOT_PASSWORD=${AWS_SECRET_ACCESS_KEY}
       - MINIO_DEFAULT_BUCKETS=sagemaker-data:public
-    extra_hosts:
-      - host.docker.internal:host-gateway
+    networks:
+      - s3
+
+  pipeline:
+    build:
+      context: .
+      dockerfile: pipeline/Dockerfile
+      tags:
+        - sm-pipecd-pipeline:latest
+    container_name: sm-pipecd-pipeline
+    networks:
+      - s3
+    environment:
+      CONFIG_DATA: ${CONFIG_DATA}
+    command:
+      - /app/.venv/bin/python3
+      - run_pipeline.py
+      - --config-data
+      - $CONFIG_DATA
+
+networks:
+  s3:
+    name: "s3"
+    driver: bridge
 
 volumes:
   minio_data:

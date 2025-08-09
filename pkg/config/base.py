@@ -28,12 +28,16 @@ class BaseConfig(BaseModel):
 
     @classmethod
     def load_config(cls, config_base64: str) -> Self:
-        config_yaml = base64.b64decode(config_base64).decode("utf-8")
-        config_dict = yaml.safe_load(config_yaml)
         try:
+            config_yaml = base64.b64decode(config_base64).decode("utf-8")
+            config_dict = yaml.safe_load(config_yaml)
             config = cls.model_validate(config_dict)
         except ValidationError:
             logger.exception("Configuration validation error")
+            print(config_yaml)
+            raise
+        except:
+            logger.exception("Load configuration error")
             raise
 
         return config

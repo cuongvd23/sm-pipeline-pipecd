@@ -5,7 +5,7 @@ from colorlog import ColoredFormatter
 
 def get_logger(name: str) -> logging.Logger:
     formatter = ColoredFormatter(
-        "%(log_color)s%(levelname)-8s%(reset)s [%(process)d] %(message)s",
+        "%(log_color)s%(levelname)-4s%(reset)s [%(process)d] %(name)s %(message)s",
         datefmt=None,
         reset=True,
         log_colors={

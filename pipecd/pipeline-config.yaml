@@ -7,6 +7,6 @@ name: pipeline
 roleArn: SageMakerRole
 s3Bucket: sagemaker-data
 s3Prefix: pipelines
-s3EndpointUrl: http://172.17.0.1:9000 # docker0 ip addr
-mlflowTrackingServerUri: http://172.17.0.1:5000 # docker0 ip addr
+s3EndpointUrl: http://s3:9000 # docker network
+mlflowTrackingServerUri: http://mlflow:5000 # docker network
 mlflowExperimentName: eventscoring-ranking
