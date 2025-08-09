@@ -24,11 +24,11 @@ def _get_session(config: PipelineConfig) -> Session:
 def get_pipeline(config: PipelineConfig) -> Pipeline:
     sagemaker_session = _get_session(config)
 
-    _data_preprocess = data_preprocess()  # pyright: ignore[reportCallIssue]
-    _data_validate = data_validate()  # pyright: ignore[reportCallIssue]
-    _model_train = model_train()  # pyright: ignore[reportCallIssue]
-    _model_tune = model_tune()  # pyright: ignore[reportCallIssue]
-    _model_evaluate = model_evaluate()  # pyright: ignore[reportCallIssue]
+    _data_preprocess = data_preprocess()
+    _data_validate = data_validate()
+    _model_train = model_train()
+    _model_tune = model_tune()
+    _model_evaluate = model_evaluate()
 
     get_step(_data_validate).add_depends_on([_data_preprocess])
     get_step(_model_train).add_depends_on([_data_validate])
