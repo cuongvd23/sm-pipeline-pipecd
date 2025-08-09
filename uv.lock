@@ -400,6 +400,18 @@ wheels = [
 ]
 
 [[package]]
+name = "mypy-boto3-sagemaker"
+version = "1.40.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f7/8a/fdba135a1eb28dfa2be5aba43bda9bd9dbd7eb91083b0cef7f9afabee9e1/mypy_boto3_sagemaker-1.40.6.tar.gz", hash = "sha256:3c760203b56d07caf51d2cef5c0f8c2e06e7ef67dec1ba46b578fecd8d43e02a", size = 219137, upload-time = "2025-08-08T19:43:46.382Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f3/ee/fd23233608e1fa289498c30a9c6c275ece2a2ea6b1143f663cb31f1d784b/mypy_boto3_sagemaker-1.40.6-py3-none-any.whl", hash = "sha256:c763120719badd1ea197f3fcf5de11f3a4ee565dc5e34b4adc18e44b36c12e6a", size = 222847, upload-time = "2025-08-08T19:43:37.766Z" },
+]
+
+[[package]]
 name = "mypy-extensions"
 version = "1.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -850,6 +862,7 @@ dependencies = [
 typing = [
     { name = "boto3-stubs" },
     { name = "mypy" },
+    { name = "mypy-boto3-sagemaker" },
     { name = "types-pyyaml" },
 ]
 
@@ -868,6 +881,7 @@ requires-dist = [
 typing = [
     { name = "boto3-stubs", specifier = "==1.40.6" },
     { name = "mypy", specifier = "==1.17.1" },
+    { name = "mypy-boto3-sagemaker", specifier = "==1.40.6" },
     { name = "types-pyyaml", specifier = "==6.0.12.20250516" },
 ]
 
