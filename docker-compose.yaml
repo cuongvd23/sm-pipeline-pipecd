@@ -27,7 +27,9 @@ services:
     networks:
       - s3
     environment:
-      CONFIG_DATA: ${CONFIG_DATA}
+      - CONFIG_DATA=${CONFIG_DATA}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     command:
       - /app/.venv/bin/python3
       - run_pipeline.py
