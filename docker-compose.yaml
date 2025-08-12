@@ -22,7 +22,9 @@ services:
       context: .
       dockerfile: pipeline/Dockerfile
       tags:
-        - sm-pipecd-pipeline:latest
+        - sm-pipeline-pipecd:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     container_name: sm-pipecd-pipeline
     networks:
       - s3

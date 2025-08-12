@@ -2,6 +2,9 @@
 FROM python:3.10 AS builder
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
+RUN curl -fsSL https://get.docker.com -o get-docker.sh &&\
+  sh get-docker.sh
+
 # Change the working directory to the `app` directory
 WORKDIR /app
 
@@ -15,6 +18,10 @@ FROM python:3.10-slim
 
 # Copy the environment
 COPY --from=builder --chown=app:app /app/.venv /app/.venv
+
+# Copy the docker cli
+COPY --from=builder /usr/bin/docker /usr/bin/docker
+COPY --from=builder /usr/libexec/docker/cli-plugins /usr/libexec/docker/cli-plugins
 
 COPY . /app
 
