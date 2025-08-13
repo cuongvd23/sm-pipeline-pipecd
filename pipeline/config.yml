@@ -5,6 +5,7 @@ SageMaker:
       RemoteFunction:
         Dependencies: "pipeline/requirements.txt"
         # ImageUri: "111111111111.dkr.ecr.region.amazonaws.com/private-repo:version"
+        ImageUri: "sm-pipeline-pipecd:latest"
         RoleArn: "arn:aws:iam::111111111111:role/sagemaker-pipeline"
         InstanceType: "ml.m4.xlarge" # minimum machine type for Training Job
         IncludeLocalWorkDir: true # import code from other modules

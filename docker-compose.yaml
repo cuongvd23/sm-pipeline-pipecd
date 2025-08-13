@@ -14,8 +14,7 @@ services:
       - MINIO_ROOT_USER=${AWS_ACCESS_KEY_ID}
       - MINIO_ROOT_PASSWORD=${AWS_SECRET_ACCESS_KEY}
       - MINIO_DEFAULT_BUCKETS=sagemaker-data:public
-    networks:
-      - s3
+      - MINIO_BROWSER=on
 
   pipeline:
     build:
@@ -24,11 +23,11 @@ services:
       tags:
         - sm-pipeline-pipecd:latest
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./tmp/:/tmp
     container_name: sm-pipecd-pipeline
-    networks:
-      - s3
     environment:
+      - HOST_CWD=${HOST_CWD}
       - CONFIG_DATA=${CONFIG_DATA}
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
@@ -37,11 +36,6 @@ services:
       - run_pipeline.py
       - --config-data
       - $CONFIG_DATA
-
-networks:
-  s3:
-    name: "s3"
-    driver: bridge
 
 volumes:
   minio_data:
