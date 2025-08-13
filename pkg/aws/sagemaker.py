@@ -20,7 +20,7 @@ class ContainerVolume(sagemaker.local.image._Volume):
         cwd = os.getenv("HOST_CWD")
         if cwd:
             host_dir = cwd + host_dir
-        super().__init__(host_dir, container_dir, channel)
+        super().__init__(host_dir, container_dir, channel)  # type: ignore[no-untyped-call]
 
 
 def get_session(config: PipelineConfig, sagemaker_config: dict[str, Any]) -> Session:
@@ -32,7 +32,7 @@ def get_session(config: PipelineConfig, sagemaker_config: dict[str, Any]) -> Ses
             default_bucket=config.s3_bucket,
             default_bucket_prefix=config.s3_prefix,
         )
-        sagemaker.local.image._Volume = ContainerVolume
+        sagemaker.local.image._Volume = ContainerVolume  # type: ignore[misc]
         session.sagemaker_config = sagemaker_config
         session.config = {"local": {"local_code": True}}
         return session
