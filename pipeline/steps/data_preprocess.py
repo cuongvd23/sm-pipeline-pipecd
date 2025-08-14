@@ -2,13 +2,13 @@ import time
 
 from sagemaker.workflow.function_step import step
 
-from pkg.log import get_logger
-
-logger = get_logger(__name__)
-
 
 @step(display_name="data_preprocess")
 def data_preprocess() -> None:
+    from pkg.log import get_logger
+
+    logger = get_logger(__name__)
+
     logger.info("Start data preprocessing...")
 
     # TODO: implement me
