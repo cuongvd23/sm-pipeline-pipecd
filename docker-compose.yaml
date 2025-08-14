@@ -43,8 +43,10 @@ services:
 
 networks:
   sagemaker-local:
-    external: true
+    name: "sagemaker-local"
+    driver: bridge
 
 volumes:
   minio_data:
+    name: "minio_data"
     driver: local
