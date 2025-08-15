@@ -21,9 +21,8 @@ This project supports testing and validating AWS SageMaker pipeline on the local
 ### Prerequisites
 
 - Python 3.10
-- UV package manager
+- UV package manager (Reccommend)
 - Docker and Docker Compose
-- AWS credentials (for AWS deployment)
 
 ### Installation
 
@@ -35,13 +34,16 @@ uv sync
 uv sync --group typing
 ```
 
-### Local Development
+### Local Mode
 
 1. Set up environment variables:
 
 ```bash
 export HOST_CWD=$(pwd)
-export CONFIG_DATA=<base64_encoded_config>
+export CONFIG_DATA=<base64_encoded_config> # eg. macos: cat pipecd/pipeline-config.yaml | base64
+
+cp .env.example .env
+vi .env
 ```
 
 2. Run with Docker Compose:
@@ -79,6 +81,9 @@ data_preprocess → data_validate → model_train → model_tune
 ### Code Quality
 
 ```bash
+# Setup environment
+uv sync --locked --all-groups
+
 # Linting
 uv run ruff check
 uv run ruff check --fix  # Auto-fix issues
