@@ -20,7 +20,7 @@ This project supports testing and validating AWS SageMaker pipeline on the local
 
 ### Prerequisites
 
-- Python 3.10
+- Python 3.13
 - UV package manager (Reccommend)
 - Docker and Docker Compose
 

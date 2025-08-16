@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 import base64
+from typing import Self
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from pydantic.alias_generators import to_camel
-from typing_extensions import Self
 
 from pkg.log import get_logger
 
