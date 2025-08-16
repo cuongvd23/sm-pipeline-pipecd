@@ -1,5 +1,5 @@
 # Install uv
-FROM python:3.10 AS builder
+FROM python:3.13 AS builder
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh &&\
@@ -18,7 +18,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
   --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
   uv sync --locked --active --no-install-project
 
-FROM python:3.10-slim
+FROM python:3.13-slim
 
 # Copy the environment
 COPY --from=builder --chown=app:app /app/venv /app/venv
