@@ -5,7 +5,7 @@ import boto3
 import sagemaker.local.image
 import yaml
 from sagemaker import Session
-from sagemaker.local.local_session import LocalSession
+from sagemaker.workflow.pipeline_context import LocalPipelineSession, PipelineSession
 
 from pkg.config.pipeline import PipelineConfig
 from pkg.const.aws import SAGEMAKER_SERVICE_NAME
@@ -22,7 +22,7 @@ class ContainerVolume(sagemaker.local.image._Volume):
         if cwd:
             logger.warning("Patching container volume")
             host_dir = cwd + host_dir
-        super().__init__(host_dir, container_dir, channel)  # type: ignore[no-untyped-call]
+        super().__init__(host_dir, container_dir, channel)
 
 
 class SageMakerContainer(sagemaker.local.image._SageMakerContainer):
@@ -34,7 +34,7 @@ class SageMakerContainer(sagemaker.local.image._SageMakerContainer):
     ) -> dict[str, Any]:
         content: dict[str, Any] = super()._generate_compose_file(
             command, additional_volumes, additional_env_vars
-        )  # type: ignore[no-untyped-call]
+        )
 
         if content.get("networks", {}).get("sagemaker-local"):
             logger.warning("Patching docker-compose.yaml")
@@ -59,7 +59,7 @@ class SageMakerContainer(sagemaker.local.image._SageMakerContainer):
 def get_session(config: PipelineConfig, sagemaker_config: dict[str, Any]) -> Session:
     boto_session = boto3.Session(region_name=config.region_name)
     if config.is_local:
-        session = LocalSession(
+        session = LocalPipelineSession(
             boto_session=boto_session,
             s3_endpoint_url=config.s3_endpoint_url,
             default_bucket=config.s3_bucket,
@@ -75,7 +75,7 @@ def get_session(config: PipelineConfig, sagemaker_config: dict[str, Any]) -> Ses
         return session
 
     sagemaker_client = boto_session.client(SAGEMAKER_SERVICE_NAME)
-    return Session(
+    return PipelineSession(
         boto_session=boto_session,
         sagemaker_client=sagemaker_client,
         default_bucket=config.s3_bucket,
