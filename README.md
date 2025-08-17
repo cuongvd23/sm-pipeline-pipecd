@@ -62,13 +62,9 @@ docker compose up --build pipeline
 
 ## Pipeline Architecture
 
-The ML pipeline consists of five sequential steps:
+![SageMaker Pipeline DAG](./assets/sm-pipeline-execution.jpg "SageMaker Pipeline DAG")
 
-```
-data_preprocess → data_validate → model_train → model_tune
-                                                    ↓
-                                              model_evaluate
-```
+The ML pipeline consists of five sequential steps:
 
 1. **Data Preprocessing**: Initial data cleaning and preparation
 2. **Data Validation**: Data quality checks and validation
