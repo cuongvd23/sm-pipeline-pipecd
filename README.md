@@ -36,6 +36,8 @@ uv sync --group typing
 
 ### Local Mode
 
+![SageMaker local mode containerized development flow](./assets/sagemaker-local-docker.png "SageMaker local mode containerized development flow")
+
 1. Set up environment variables:
 
 ```bash
