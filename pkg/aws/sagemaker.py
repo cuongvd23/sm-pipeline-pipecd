@@ -18,8 +18,7 @@ class ContainerVolume(sagemaker.local.image._Volume):
     def __init__(
         self, host_dir: str, container_dir: str | None = None, channel: str | None = None
     ) -> None:
-        cwd = os.getenv("HOST_CWD")
-        if cwd:
+        if cwd := os.getenv("HOST_CWD"):
             logger.warning("Patching container volume")
             host_dir = cwd + host_dir
         super().__init__(host_dir, container_dir, channel)

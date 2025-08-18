@@ -29,15 +29,13 @@ services:
       - ./tmp/:/tmp
     container_name: sm-pipecd-pipeline
     environment:
+      - TMPDIR=/tmp
       - HOST_CWD=${HOST_CWD}
       - CONFIG_DATA=${CONFIG_DATA}
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-    command:
-      - python3
-      - run_pipeline.py
-      - --config-data
-      - $CONFIG_DATA
+    command: >
+      python3 run_pipeline.py --config-data $CONFIG_DATA
     networks:
       - sagemaker-local
 
