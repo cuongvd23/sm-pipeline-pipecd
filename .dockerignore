@@ -89,4 +89,9 @@ venv/
 # VS Code
 .vscode/
 
+# PipeCD
+pipecd/
+
+# Others
+assets/
 tmp/
