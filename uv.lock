@@ -41,43 +41,43 @@ wheels = [
 
 [[package]]
 name = "boto3"
-version = "1.40.17"
+version = "1.40.19"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "botocore" },
     { name = "jmespath" },
     { name = "s3transfer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/71/b1/0f91a07dc87485a791f2d31df1c2dc75dc5d302fbf002e5446ffa04e8e32/boto3-1.40.17.tar.gz", hash = "sha256:e115dc87d5975d32dfa0ebaf19c39e360665317a350004fa94b03200fe853f2e", size = 112054, upload-time = "2025-08-25T19:37:21.291Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d4/d6/f67e90c53f499a12353e6f19104fc55f9fc9ec514207dbe08e1e1de9a45b/boto3-1.40.19.tar.gz", hash = "sha256:772f259fdef6efa752c5744e140c0371593a20a0c728cce91d67b8b58d1090e7", size = 111524, upload-time = "2025-08-27T19:19:38.453Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/91/b5/1973ed8c107beb2fe5a510d5609603537a4e18a920ead021bed5699c5437/boto3-1.40.17-py3-none-any.whl", hash = "sha256:2cacecd689cb51d81fbf54f84b64d0e6e922fbc18ee513c568b9f61caf4221e0", size = 140076, upload-time = "2025-08-25T19:37:20.087Z" },
+    { url = "https://files.pythonhosted.org/packages/d3/15/3886b46973d10814f0aa89e94e03182f233fd478b2be317e706d9f0e85bd/boto3-1.40.19-py3-none-any.whl", hash = "sha256:9cdf01576fae6cb12b71fd6b793f34876feafa962cdaf3a9489253580355fc60", size = 139324, upload-time = "2025-08-27T19:19:36.693Z" },
 ]
 
 [[package]]
 name = "boto3-stubs"
-version = "1.40.17"
+version = "1.40.19"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "botocore-stubs" },
     { name = "types-s3transfer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c6/7f/28d8ad4512d993497842e130f70d3ae0321e5c9205304155f7754ec494fc/boto3_stubs-1.40.17.tar.gz", hash = "sha256:c1ab714b0b70c9008e2a4a44de82137e58165331573084ef95fc223b0cfc6473", size = 101398, upload-time = "2025-08-25T19:48:05.527Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/99/42/0ce9c225d0fe905c7cb0a88dcc1d4bcc98a60c520ea76f75536abaed4c31/boto3_stubs-1.40.19.tar.gz", hash = "sha256:a8773b2a03c6c6df3be7001581c389e1d865d8f7338c5b47768e490b19cc3329", size = 101036, upload-time = "2025-08-27T19:38:03.194Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/e3/cb31b935ff3ae6743bdb0d51fa88b7a83befd4f7f1fac52156dacef72bc6/boto3_stubs-1.40.17-py3-none-any.whl", hash = "sha256:4306b1c24c1e61e8ee478537ba6e8c5c23c0e6850b0496e0120813aebc08bea7", size = 70012, upload-time = "2025-08-25T19:48:00.667Z" },
+    { url = "https://files.pythonhosted.org/packages/2e/5b/114031110e6f465c0f23ce5592ee8fbdc63fb7d6145c70c638d81cd4a110/boto3_stubs-1.40.19-py3-none-any.whl", hash = "sha256:ffadeac77a9ea4830ea484ad375db0e18be0a8afdfad9ea00b2c242f37179133", size = 69769, upload-time = "2025-08-27T19:33:08.677Z" },
 ]
 
 [[package]]
 name = "botocore"
-version = "1.40.17"
+version = "1.40.19"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jmespath" },
     { name = "python-dateutil" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/55/87/92b520e7f4ac2a64c6e68bedc1dc3c1335a5aa1efb89a4247b45e34e40ac/botocore-1.40.17.tar.gz", hash = "sha256:769cd04a6a612f2d48b5f456c676fd81733fab682870952f7e2887260ea6a2bc", size = 14375996, upload-time = "2025-08-25T19:37:11.692Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b9/8c/8e319b9936fea23a3be19fac2921dd91cc60a99c0cf771d7d676e3329bb3/botocore-1.40.19.tar.gz", hash = "sha256:becc101b3047ec4cffa6c86bab747b8312db20529ee0132fe77007092a9c9f85", size = 14320063, upload-time = "2025-08-27T19:19:27.94Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/67/fd/bcc913de90d6f0549a04ee40caaf7d4e76efb5a622fc6cc47379f686e50f/botocore-1.40.17-py3-none-any.whl", hash = "sha256:603951935c1a741ae70236bf15725c5293074f28503e7029ad0e24ece476a342", size = 14035937, upload-time = "2025-08-25T19:37:06.75Z" },
+    { url = "https://files.pythonhosted.org/packages/20/11/a633975158d79bb361ebaa802c393f5408b4cf95226ba3abe573f29741fb/botocore-1.40.19-py3-none-any.whl", hash = "sha256:6a7c2ceaf8ed3321cf4bc15420dad4e778263d3b480c86f7fd9da982e1deaa64", size = 13985499, upload-time = "2025-08-27T19:19:22.249Z" },
 ]
 
 [[package]]
@@ -385,11 +385,11 @@ wheels = [
 
 [[package]]
 name = "mypy-boto3-sagemaker"
-version = "1.40.16"
+version = "1.40.19"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c9/76/cdf0e355d3243dfdf481c811ee6f06ccfe49906e851770fbbfd7eff0e61b/mypy_boto3_sagemaker-1.40.16.tar.gz", hash = "sha256:1061ae6f2124c09c81159cba04f8baa33c16ec42474993b0ffc48afc51c873ae", size = 219640, upload-time = "2025-08-22T19:43:22.873Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ec/d2/0254c0f28d6425c91cdb5963298bc795e53ee8ed8ece579312bfaa6d4dd6/mypy_boto3_sagemaker-1.40.19.tar.gz", hash = "sha256:c7678e5d278571d5894a074c72350f4701f9ebf37e0635e90a7996323f69a3fc", size = 219846, upload-time = "2025-08-27T19:28:10.499Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/35/63/360257f75359ddca1856d915dea58a8c77fef7a192a81eb4916d8192c98f/mypy_boto3_sagemaker-1.40.16-py3-none-any.whl", hash = "sha256:fecfc9d83a83fcd1b81c96cd1087baa6fac80cdc63819f89539d2955263fc5eb", size = 223231, upload-time = "2025-08-22T19:43:18.606Z" },
+    { url = "https://files.pythonhosted.org/packages/9c/a4/a1298999270acbc21282a42f4af3c6fe542d9e5973b151aefc9bd5235404/mypy_boto3_sagemaker-1.40.19-py3-none-any.whl", hash = "sha256:2efa308e570cfdc22db13a86f6b6c7a79567d69dcc9522b718c74925f31d4ea0", size = 223525, upload-time = "2025-08-27T19:28:04.809Z" },
 ]
 
 [[package]]
@@ -840,7 +840,7 @@ typing = [
 
 [package.metadata]
 requires-dist = [
-    { name = "boto3", specifier = "==1.40.17" },
+    { name = "boto3", specifier = "==1.40.19" },
     { name = "colorlog", specifier = "==6.9.0" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "pyyaml", specifier = "==6.0.2" },
@@ -851,9 +851,9 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 typing = [
-    { name = "boto3-stubs", specifier = "==1.40.17" },
+    { name = "boto3-stubs", specifier = "==1.40.19" },
     { name = "mypy", specifier = "==1.17.1" },
-    { name = "mypy-boto3-sagemaker", specifier = "==1.40.16" },
+    { name = "mypy-boto3-sagemaker", specifier = "==1.40.19" },
     { name = "types-pyyaml", specifier = "==6.0.12.20250822" },
 ]
 
