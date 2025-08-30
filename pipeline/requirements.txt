@@ -1,2 +1,2 @@
-sagemaker==2.251.0
+sagemaker==2.251.1
 colorlog==6.9.0
