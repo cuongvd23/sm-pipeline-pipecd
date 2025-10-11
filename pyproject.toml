@@ -8,19 +8,19 @@ keywords = ["aws", "sagemaker", "pipeline", "mlops", "pipecd", "cicd"]
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
-  "uv==0.9.1",
-  "boto3==1.40.49",
+  "uv==0.9.2",
+  "boto3==1.40.50",
   "colorlog==6.9.0",
   "python-dotenv==1.1.1",
   "pyyaml==6.0.3",
-  "sagemaker==2.252.0",
+  "sagemaker==2.253.0",
   "typer==0.19.2",
 ]
 
 [dependency-groups]
 typing = [
   "mypy==1.18.2",
-  "boto3-stubs==1.40.49",
+  "boto3-stubs==1.40.50",
   "types-pyyaml==6.0.12.20250915",
   "mypy-boto3-sagemaker==1.40.27",
 ]
