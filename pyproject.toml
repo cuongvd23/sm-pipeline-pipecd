@@ -8,7 +8,7 @@ keywords = ["aws", "sagemaker", "pipeline", "mlops", "pipecd", "cicd"]
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
-  "uv==0.9.3",
+  "uv==0.9.4",
   "boto3==1.40.55",
   "colorlog==6.10.1",
   "python-dotenv==1.1.1",
