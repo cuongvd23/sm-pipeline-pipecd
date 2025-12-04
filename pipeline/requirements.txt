@@ -1,2 +1,2 @@
-sagemaker==3.0.1
+sagemaker==3.1.0
 colorlog==6.10.1
