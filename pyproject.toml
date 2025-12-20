@@ -9,18 +9,18 @@ readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
   "uv==0.9.18",
-  "boto3==1.42.13",
+  "boto3==1.42.14",
   "colorlog==6.10.1",
   "python-dotenv==1.2.1",
   "pyyaml==6.0.3",
-  "sagemaker==3.1.1",
-  "typer==0.20.0",
+  "sagemaker==3.2.0",
+  "typer==0.20.1",
 ]
 
 [dependency-groups]
 typing = [
   "mypy==1.19.1",
-  "boto3-stubs==1.42.13",
+  "boto3-stubs==1.42.14",
   "types-pyyaml==6.0.12.20250915",
   "mypy-boto3-sagemaker==1.42.12",
 ]
