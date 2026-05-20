@@ -2211,7 +2211,7 @@ wheels = [
 
 [[package]]
 name = "sagemaker"
-version = "3.11.0"
+version = "3.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "sagemaker-core" },
@@ -2219,14 +2219,14 @@ dependencies = [
     { name = "sagemaker-serve" },
     { name = "sagemaker-train" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3d/18/d58263e69fb505a35458f260ab85a578547132b88719592191c993571551/sagemaker-3.11.0.tar.gz", hash = "sha256:93f20ba7751063e179f25cd1a38b8f88bff086f0cd273fff5b72a3a78d4610c5", size = 12188, upload-time = "2026-05-13T00:14:02.031Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/97/35b6cbced4d803398c8d82668a85d0ca3fa91c3db6d95fb251191aaa5e02/sagemaker-3.12.0.tar.gz", hash = "sha256:0ef78944392d7aa7c1a339372f57e18bb50a873b57c619c11e35d67d198de65f", size = 12152, upload-time = "2026-05-20T04:01:01.616Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/52/94/9e23f19646478d6f055825be8b7fac4f62fc1895f1d068a560439edfe097/sagemaker-3.11.0-py3-none-any.whl", hash = "sha256:e4d5ec9f34915d234057b88c2bbecd0279d9b78b191a13a49c64cc88df19c9dd", size = 11260, upload-time = "2026-05-13T00:13:59.605Z" },
+    { url = "https://files.pythonhosted.org/packages/e4/28/9a4719750624f6aa72417d045ac9f5b662e89ab5cada855b555781ce4271/sagemaker-3.12.0-py3-none-any.whl", hash = "sha256:fd959df5849ec2e9bf8eb5e25acf408f02933645fc4935748d304114a8b9ad89", size = 11261, upload-time = "2026-05-20T04:00:59.39Z" },
 ]
 
 [[package]]
 name = "sagemaker-core"
-version = "2.11.0"
+version = "2.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -2254,9 +2254,9 @@ dependencies = [
     { name = "tblib" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4e/b3/940a54d188bc0eef06647f9dd6bb2bbe7a5d95ced2883305a3e1edab79ac/sagemaker_core-2.11.0.tar.gz", hash = "sha256:3874e9d2acd2c15b80dd2b5b8043901b12de1cf42cd9084ea997fe11d59925f3", size = 1063421, upload-time = "2026-05-12T23:02:18.224Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c8/11/1f4436113f3236a8fbdff3cde0deceff38bfc6b1592344839ca847a5aa11/sagemaker_core-2.12.0.tar.gz", hash = "sha256:9338b356edb7f5faef168f3284b40c1367013ad74e231a9e60326fcfd436fe55", size = 1064055, upload-time = "2026-05-19T23:09:35.015Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cb/0b/7ecd021981c9ee42e40aa22ac913ec90ab1f07b6ae12b7afc5bf07f43dec/sagemaker_core-2.11.0-py3-none-any.whl", hash = "sha256:f4853c1eea0b4b37d555d35976323d6540c67c47b46ce1308a723c6478e0af42", size = 1300786, upload-time = "2026-05-12T23:02:16.526Z" },
+    { url = "https://files.pythonhosted.org/packages/12/4c/7cd5b4eb38e180109485374f89d6451e234bb4ac1d44c9de4d03d39fc38c/sagemaker_core-2.12.0-py3-none-any.whl", hash = "sha256:f4d3ebfff20f6d921be35c56191ee6683811e794edc3e6df5adf30c9b250a102", size = 1303760, upload-time = "2026-05-19T23:09:32.858Z" },
 ]
 
 [[package]]
@@ -2274,11 +2274,12 @@ wheels = [
 
 [[package]]
 name = "sagemaker-mlops"
-version = "1.11.0"
+version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
     { name = "botocore" },
+    { name = "cryptography" },
     { name = "pyarrow" },
     { name = "pyiceberg", extra = ["glue"] },
     { name = "s3fs" },
@@ -2286,9 +2287,9 @@ dependencies = [
     { name = "sagemaker-serve" },
     { name = "sagemaker-train" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/23/a5/a70c1e9c3258cb67c62330f02e5e4f3a95c7383c911920b17584e3881180/sagemaker_mlops-1.11.0.tar.gz", hash = "sha256:8ee022c2881c3f1db688f7d502a7918bf7e28807e02b28106e6f5a592e38178f", size = 162072, upload-time = "2026-05-12T23:19:04.163Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/61/12/fb3a4e9888b953a8a2beb3aeb87207a26d771b8b79aa921421b6d5406c8e/sagemaker_mlops-1.12.0.tar.gz", hash = "sha256:28dfa5df51d307e0c5ab5d5ec412d90519d74885042fe83d34b98da212abcc4f", size = 163434, upload-time = "2026-05-20T03:53:36.057Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/3b/19ade10d55e20b23e7e5d524efe397387208ddd97b9d2fd464fc39cc6646/sagemaker_mlops-1.11.0-py3-none-any.whl", hash = "sha256:c39ee9cfbb636ae0c323a829271245c95eb6adc6281b8834545c57cf09f6fc06", size = 217785, upload-time = "2026-05-12T23:19:02.666Z" },
+    { url = "https://files.pythonhosted.org/packages/e3/d6/d365cce12b4f4defeff082caefa2ad5f246f23901d3c1cb8a2d6bd162a4a/sagemaker_mlops-1.12.0-py3-none-any.whl", hash = "sha256:792b44b88259c684e13296d4ec8cbed62848bc630c090bd354a6dc41bb7afa62", size = 220207, upload-time = "2026-05-20T03:53:34.406Z" },
 ]
 
 [[package]]
@@ -2304,7 +2305,7 @@ wheels = [
 
 [[package]]
 name = "sagemaker-serve"
-version = "1.11.0"
+version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -2322,14 +2323,14 @@ dependencies = [
     { name = "tqdm" },
     { name = "tritonclient", extra = ["http"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cc/0c/fe7072f53894c6c15a41468930a98b0aef6139ae562f5fb7bebe1adc82f0/sagemaker_serve-1.11.0.tar.gz", hash = "sha256:ab836daaaa85d77b723cf138cea6f00aaa7ade5e6b1c29f9f5e3e738d50483a5", size = 171962, upload-time = "2026-05-12T23:14:16.695Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/19/9a18ad39687a6f178790f680f4ece81ca250bd9326a314f1567facaea708/sagemaker_serve-1.12.0.tar.gz", hash = "sha256:86fd61770a4e1017b61565eb6dd8c8f480d4555fd138543319eab0969ed18c4e", size = 171645, upload-time = "2026-05-20T02:28:00.976Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/db/ff/d246f5ec13830843ecddfafca268c89a4101c9df4b82084b86d958524e40/sagemaker_serve-1.11.0-py3-none-any.whl", hash = "sha256:016cab964376a3101dd1443ece288c1b8b334546736f2b2cb4d76773cb1b994c", size = 220351, upload-time = "2026-05-12T23:14:15.38Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/55/35caa3e08054c51837b57512a3d6a799736be5bb17c8675b281d1e04bc3c/sagemaker_serve-1.12.0-py3-none-any.whl", hash = "sha256:ef3fcf755aa338f611b1b926ef9f7f54491a3c91e501cb5e6ebf673783e80cbc", size = 220508, upload-time = "2026-05-20T02:27:59.609Z" },
 ]
 
 [[package]]
 name = "sagemaker-train"
-version = "1.11.0"
+version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "graphene" },
@@ -2343,9 +2344,9 @@ dependencies = [
     { name = "tblib" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e4/92/b6ecbb902230a0c36f91146ef02d4d845ee1dffe15c5d8ab71779dd70c06/sagemaker_train-1.11.0.tar.gz", hash = "sha256:9c64531f8656eccd84ed5adc6c3f0f788f393ff46a63d1479b22ad15694ef2c5", size = 201726, upload-time = "2026-05-12T23:09:57.25Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/af/85/8f03b242a7b4ec44ef40d33b423358f2e4cd57ceff3d2831f7f10d12d540/sagemaker_train-1.12.0.tar.gz", hash = "sha256:e9c7dacf5bd88941e206b9ce435aa12287392cb33b8013bca4b05ba757fd43e1", size = 201465, upload-time = "2026-05-20T01:17:18.53Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/01/85/0ba2bc09d8d1c2f60416d8032b1bf7e3a4efda16e7173af6a08da8499b49/sagemaker_train-1.11.0-py3-none-any.whl", hash = "sha256:5e9c8ccd4c67f8b465836dd65e97084c304112e41dae1f34a4c01b026cff34cf", size = 262969, upload-time = "2026-05-12T23:09:55.973Z" },
+    { url = "https://files.pythonhosted.org/packages/e9/64/764717937d60453b054e6b268ef5885b267832e37083baf74dd1ab535bdb/sagemaker_train-1.12.0-py3-none-any.whl", hash = "sha256:36abdb3436e8770097490f55b8d49326c88a429acd68d9ca65f7bba9e971b337", size = 263512, upload-time = "2026-05-20T01:17:16.938Z" },
 ]
 
 [[package]]
@@ -2467,7 +2468,7 @@ requires-dist = [
     { name = "colorlog", specifier = "==6.10.1" },
     { name = "python-dotenv", specifier = "==1.2.2" },
     { name = "pyyaml", specifier = "==6.0.3" },
-    { name = "sagemaker", specifier = "==3.11.0" },
+    { name = "sagemaker", specifier = "==3.12.0" },
     { name = "typer", specifier = "==0.25.1" },
     { name = "uv", specifier = "==0.11.15" },
 ]

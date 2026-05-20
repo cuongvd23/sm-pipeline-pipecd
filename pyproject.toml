@@ -13,7 +13,7 @@ dependencies = [
   "colorlog==6.10.1",
   "python-dotenv==1.2.2",
   "pyyaml==6.0.3",
-  "sagemaker==3.11.0",
+  "sagemaker==3.12.0",
   "typer==0.25.1",
 ]
 
