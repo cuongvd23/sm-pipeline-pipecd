@@ -9,20 +9,20 @@ readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
   "uv==0.12.0",
-  "boto3==1.43.59",
+  "boto3==1.43.61",
   "colorlog==6.12.0",
   "python-dotenv==1.2.2",
   "pyyaml==6.0.3",
-  "sagemaker==3.17.0",
+  "sagemaker==3.18.0",
   "typer==0.27.0",
 ]
 
 [dependency-groups]
 typing = [
   "mypy==2.3.0",
-  "boto3-stubs==1.43.59",
+  "boto3-stubs==1.43.61",
   "types-pyyaml==6.0.12.20260724",
-  "mypy-boto3-sagemaker==1.43.57",
+  "mypy-boto3-sagemaker==1.43.60",
 ]
 
 [tool.uv]
