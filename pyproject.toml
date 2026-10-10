@@ -14,7 +14,7 @@ dependencies = [
   "python-dotenv==1.2.4",
   "pyyaml==6.0.3",
   "sagemaker==3.23.0",
-  "typer==0.27.2",
+  "typer==0.27.3",
 ]
 
 [dependency-groups]
