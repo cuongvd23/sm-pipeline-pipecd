@@ -21,7 +21,7 @@ dependencies = [
 typing = [
   "mypy==2.4.1",
   "boto3-stubs==1.44.9",
-  "types-pyyaml==6.0.12.20261113",
+  "types-pyyaml==6.0.12.20261122",
   "mypy-boto3-sagemaker==1.44.9",
 ]
 
